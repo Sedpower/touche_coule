@@ -1,6 +1,7 @@
 package controle;
 
-import appli.*;
+import appli.InitPanel;
+import appli.Fenetre;
 import bateau.Bateau;
 import grille.*;
 

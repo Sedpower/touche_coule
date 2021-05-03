@@ -2,10 +2,6 @@ package appli;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-
-import bateau.*;
-import grille.*;
 
 public class Fenetre extends JFrame {
 
@@ -20,15 +16,21 @@ public class Fenetre extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         principal.setLayout(cl);
-        initPanel = new InitPanel();
+        initPanel = new InitPanel(this);
         principal.add(initPanel);
-        cl.show(principal, "principal");
+        cl.show(principal, "Panel d'initiation de la grille de la partie");
 
         this.add(principal);
         this.setVisible(true);
     }
 
     public void setPanel(JPanel panel) {
+        principal.add(panel,"Panel de jeu");
+        cl.show(principal, "Panel de jeu");
+    }
 
+    public void removeInit() {
+        initPanel.removeListener();
+        this.remove(initPanel);
     }
 }

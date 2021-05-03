@@ -1,7 +1,6 @@
 package bateau;
 
 import grille.Case;
-import grille.Grille;
 
 import java.util.ArrayList;
 import java.util.List;

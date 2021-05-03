@@ -7,9 +7,7 @@ import java.awt.*;
 public class Case extends JButton {
 
     public static Color caseVideColor = new Color(173,216,230);
-    public static Color caseVideHoverColor = new Color(133,176,190);
     public static Color caseOccupeeColor = new Color(150,150,150);
-    public static Color caseOccupeeHoverColor = new Color(110,110,110);
     private boolean tiree;
     private boolean occupee;
     private int abs,ord;

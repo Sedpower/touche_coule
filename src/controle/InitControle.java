@@ -2,10 +2,10 @@ package controle;
 
 import appli.InitPanel;
 import appli.Fenetre;
+import appli.JeuPanel;
 import bateau.Bateau;
 import grille.*;
 
-import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -49,7 +49,13 @@ public class InitControle implements ActionListener, MouseListener {
             if ( grille.isPossible(bateau, caseGrille) ) {
                 if ( grille.pasChevauche(bateau, caseGrille) ){
                     grille.ajoutBateau(bateau, caseGrille);
-                    initPanel.setInfo();
+                    try {
+                        initPanel.setInfo();
+                    } catch (IndexOutOfBoundsException except) {
+                        System.out.println("test");
+                        fenetre.removeInit();
+                        fenetre.setPanel(new JeuPanel(fenetre));
+                    }
                 } else {
                     initPanel.setError("Le bateau en chevauche un autre");
                 }
@@ -79,20 +85,18 @@ public class InitControle implements ActionListener, MouseListener {
     @Override
     public void mouseEntered(MouseEvent e) {
         Case caseGrille = (Case) e.getComponent();
-        if (caseGrille.estOccupee()) {
-            caseGrille.setBackground(Case.caseOccupeeHoverColor);
+        Bateau bateau = bateaux.get(action);
+        if ( grille.isPossible(bateau, caseGrille) && grille.pasChevauche(bateau, caseGrille) ) {
+            grille.previewBateau(bateau, caseGrille, true);
         } else {
-            caseGrille.setBackground(Case.caseVideHoverColor);
+            grille.previewBateau(bateau, caseGrille, false);
         }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
         Case caseGrille = (Case) e.getComponent();
-        if (caseGrille.estOccupee()) {
-            caseGrille.setBackground(Case.caseOccupeeColor);
-        } else {
-            caseGrille.setBackground(Case.caseVideColor);
-        }
+        Bateau bateau = bateaux.get(action);
+        grille.removePreviewBateau(bateau, caseGrille);
     }
 }

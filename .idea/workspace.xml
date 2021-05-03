@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d664e6a-582b-4642-a4b6-ae4a2569570a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/appli/JeuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appli/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appli/Fenetre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appli/InitPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appli/InitPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bateau/Bateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bateau/Bateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controle/InitControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controle/InitControle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grille/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grille/Case.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grille/Grille.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grille/Grille.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,19 +51,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -88,6 +67,7 @@
       <updated>1619952873427</updated>
       <workItem from="1619952921000" duration="10810000" />
       <workItem from="1620035753118" duration="1751000" />
+      <workItem from="1620042138989" duration="62000" />
     </task>
     <servers />
   </component>

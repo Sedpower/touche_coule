@@ -11,10 +11,10 @@ public class InitCase extends JButton {
         Image newimg = image.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
         return new ImageIcon(newimg);
     }
-    public static ImageIcon caseVideImg = resize(new ImageIcon("src/fr/sedpower/touche_coule/img/caseVideImg.png"));
-    public static ImageIcon caseOccupeeImg = resize(new ImageIcon("src/fr/sedpower/touche_coule/img/caseOccupeeImg.png"));
-    public static ImageIcon casePreviewImpossibleImg = resize(new ImageIcon("src/fr/sedpower/touche_coule/img/casePreviewImpossibleImg.png"));
-    public static ImageIcon casePreviewPossibleImg = resize(new ImageIcon("src/fr/sedpower/touche_coule/img/casePreviewPossibleImg.png"));
+    public static ImageIcon caseVideImg = resize(new ImageIcon("src/ressources/img/caseVideImg.png"));
+    public static ImageIcon caseOccupeeImg = resize(new ImageIcon("src/ressources/img/caseOccupeeImg.png"));
+    public static ImageIcon casePreviewImpossibleImg = resize(new ImageIcon("src/ressources/img/casePreviewImpossibleImg.png"));
+    public static ImageIcon casePreviewPossibleImg = resize(new ImageIcon("src/ressources/img/casePreviewPossibleImg.png"));
     private boolean occupee;
     private final int abs, ord;
 

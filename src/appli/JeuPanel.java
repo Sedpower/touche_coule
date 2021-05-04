@@ -1,5 +1,6 @@
 package appli;
 
+import bateau.Bateau;
 import controle.JeuControle;
 import grille.CaseDefense;
 import grille.GrilleDefense;
@@ -7,6 +8,7 @@ import grille.InitGrille;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 public class JeuPanel extends JPanel {
 
@@ -15,7 +17,7 @@ public class JeuPanel extends JPanel {
     private GrilleDefense grilleDefense;
     private JeuControle jeuControle;
 
-    public JeuPanel(Fenetre fenetre, InitGrille initGrille) {
+    public JeuPanel(Fenetre fenetre, InitGrille initGrille, List<Bateau> bateauxDefense) {
         this.setLayout(new BorderLayout());
         fenetre.changeSize(new Dimension(1100, 600));
         ///////////////// Panel des grilles joueur /////////////////
@@ -29,6 +31,8 @@ public class JeuPanel extends JPanel {
 
         grilleDefense = new GrilleDefense(initGrille);
         // TODO Grille attaque
+
+        jeuControle = new JeuControle(fenetre, grilleDefense, bateauxDefense, this);
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {

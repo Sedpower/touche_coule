@@ -87,9 +87,9 @@ public class InitGrille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (possible) {
-                        getCase(caseGrille.getOrd(), i).setBackground(new Color(0,150,0));
+                        getCase(caseGrille.getOrd(), i).setIcon(CaseCliquable.casePreviewPossibleImg);
                     } else {
-                        getCase(caseGrille.getOrd(), i).setBackground(new Color(150,0,0));
+                        getCase(caseGrille.getOrd(), i).setIcon(CaseCliquable.casePreviewImpossibleImg);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
@@ -101,9 +101,9 @@ public class InitGrille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (possible) {
-                        getCase(i, caseGrille.getAbs()).setBackground(new Color(0,150,0));
+                        getCase(i, caseGrille.getAbs()).setIcon(CaseCliquable.casePreviewPossibleImg);
                     } else {
-                        getCase(i, caseGrille.getAbs()).setBackground(new Color(150,0,0));
+                        getCase(i, caseGrille.getAbs()).setIcon(CaseCliquable.casePreviewImpossibleImg);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
@@ -121,9 +121,9 @@ public class InitGrille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (getCase(caseGrille.getOrd(), i).estOccupee()) {
-                        getCase(caseGrille.getOrd(), i).setBackground(CaseCliquable.caseOccupeeColor);
+                        getCase(caseGrille.getOrd(), i).setIcon(CaseCliquable.caseOccupeeImg);
                     } else {
-                        getCase(caseGrille.getOrd(), i).setBackground(CaseCliquable.caseVideColor);
+                        getCase(caseGrille.getOrd(), i).setIcon(CaseCliquable.caseVideImg);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
@@ -135,9 +135,9 @@ public class InitGrille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (getCase(i, caseGrille.getAbs()).estOccupee()) {
-                        getCase(i, caseGrille.getAbs()).setBackground(CaseCliquable.caseOccupeeColor);
+                        getCase(i, caseGrille.getAbs()).setIcon(CaseCliquable.caseOccupeeImg);
                     } else {
-                        getCase(i, caseGrille.getAbs()).setBackground(CaseCliquable.caseVideColor);
+                        getCase(i, caseGrille.getAbs()).setIcon(CaseCliquable.caseVideImg);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {

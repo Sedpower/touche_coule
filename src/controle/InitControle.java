@@ -53,7 +53,7 @@ public class InitControle implements ActionListener, MouseListener {
                         initPanel.setInfo();
                     } catch (IndexOutOfBoundsException except) {
                         fenetre.removeInit();
-                        fenetre.setPanel(new JeuPanel(fenetre, grille));
+                        fenetre.setPanel(new JeuPanel(fenetre, grille, bateaux));
                     }
                 } else {
                     initPanel.setError("Le bateau en chevauche un autre");

@@ -6,18 +6,25 @@ import java.awt.*;
 
 public class CaseCliquable extends JButton {
 
-    public static Color caseVideColor = new Color(173,216,230);
-    public static Color caseOccupeeColor = new Color(150,150,150);
+    private static ImageIcon resize(ImageIcon imageIcon) {
+        Image image = imageIcon.getImage();
+        Image newimg = image.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
+        return new ImageIcon(newimg);
+    }
+    public static ImageIcon caseVideImg = resize(new ImageIcon("src/img/caseVideImg.png"));
+    public static ImageIcon caseOccupeeImg = resize(new ImageIcon("src/img/caseOccupeeImg.png"));
+    public static ImageIcon casePreviewImpossibleImg = resize(new ImageIcon("src/img/casePreviewImpossibleImg.png"));
+    public static ImageIcon casePreviewPossibleImg = resize(new ImageIcon("src/img/casePreviewPossibleImg.png"));
     private boolean occupee;
-    private final int abs,ord;
+    private final int abs, ord;
 
     public CaseCliquable(int ord, int abs) {
         super("");
         this.ord = ord;
         this.abs = abs;
-        this.occupee = false;
-        this.setBorder(new LineBorder(Color.BLACK));
-        this.setBackground(caseVideColor);
+        occupee = false;
+        setBorder(new LineBorder(Color.BLACK));
+        setIcon(caseVideImg);
     }
 
     public boolean estOccupee() {
@@ -26,7 +33,7 @@ public class CaseCliquable extends JButton {
 
     public void setOccupee() {
         occupee = true;
-        setBackground(caseOccupeeColor);
+        setIcon(caseOccupeeImg);
     }
 
     public int getAbs() {

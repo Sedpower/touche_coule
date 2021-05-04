@@ -1,6 +1,6 @@
-package grille;
+package fr.sedpower.touche_coule.grille;
 
-import bateau.Bateau;
+import fr.sedpower.touche_coule.bateau.Bateau;
 
 public class InitGrille {
 

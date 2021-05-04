@@ -1,6 +1,6 @@
-package bateau;
+package fr.sedpower.touche_coule.bateau;
 
-import grille.InitCase;
+import fr.sedpower.touche_coule.grille.InitCase;
 
 import java.util.ArrayList;
 import java.util.List;

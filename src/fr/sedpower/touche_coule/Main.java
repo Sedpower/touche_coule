@@ -1,4 +1,6 @@
-import appli.Fenetre;
+package fr.sedpower.touche_coule;
+
+import fr.sedpower.touche_coule.appli.Fenetre;
 
 import javax.swing.*;
 

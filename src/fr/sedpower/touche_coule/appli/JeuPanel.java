@@ -1,10 +1,10 @@
-package appli;
+package fr.sedpower.touche_coule.appli;
 
-import bateau.Bateau;
-import controle.JeuControle;
-import grille.CaseDefense;
-import grille.GrilleDefense;
-import grille.InitGrille;
+import fr.sedpower.touche_coule.bateau.Bateau;
+import fr.sedpower.touche_coule.controle.JeuControle;
+import fr.sedpower.touche_coule.grille.CaseDefense;
+import fr.sedpower.touche_coule.grille.GrilleDefense;
+import fr.sedpower.touche_coule.grille.InitGrille;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +20,7 @@ public class JeuPanel extends JPanel {
     public JeuPanel(Fenetre fenetre, InitGrille initGrille, List<Bateau> bateauxDefense) {
         this.setLayout(new BorderLayout());
         fenetre.changeSize(new Dimension(1100, 600));
-        ///////////////// Panel des grilles joueur /////////////////
+        ///////////////// Panel des grilles fr.sedpower.touche_coule.joueur /////////////////
         grillesPanel = new JPanel(new FlowLayout());
 
         maGrillePanel = new JPanel(new GridLayout(10, 10));

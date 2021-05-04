@@ -1,9 +1,9 @@
-package controle;
+package fr.sedpower.touche_coule.controle;
 
-import appli.Fenetre;
-import appli.JeuPanel;
-import bateau.Bateau;
-import grille.GrilleDefense;
+import fr.sedpower.touche_coule.appli.Fenetre;
+import fr.sedpower.touche_coule.appli.JeuPanel;
+import fr.sedpower.touche_coule.bateau.Bateau;
+import fr.sedpower.touche_coule.grille.GrilleDefense;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

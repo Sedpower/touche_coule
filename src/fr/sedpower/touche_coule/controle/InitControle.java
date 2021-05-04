@@ -1,10 +1,10 @@
-package controle;
+package fr.sedpower.touche_coule.controle;
 
-import appli.Fenetre;
-import appli.InitPanel;
-import appli.JeuPanel;
-import bateau.Bateau;
-import grille.*;
+import fr.sedpower.touche_coule.appli.Fenetre;
+import fr.sedpower.touche_coule.appli.InitPanel;
+import fr.sedpower.touche_coule.appli.JeuPanel;
+import fr.sedpower.touche_coule.bateau.Bateau;
+import fr.sedpower.touche_coule.grille.*;
 
 import java.awt.event.*;
 import java.util.List;
@@ -56,10 +56,10 @@ public class InitControle implements ActionListener, MouseListener {
                         fenetre.setPanel(new JeuPanel(fenetre, grille, bateaux));
                     }
                 } else {
-                    initPanel.setError("Le bateau en chevauche un autre");
+                    initPanel.setError("Le fr.sedpower.touche_coule.bateau en chevauche un autre");
                 }
             } else {
-                initPanel.setError("Le bateau sort de la grille de jeu");
+                initPanel.setError("Le fr.sedpower.touche_coule.bateau sort de la fr.sedpower.touche_coule.grille de jeu");
             }
         } else {
             bateaux.get(action).changeOrientation();

@@ -1,7 +1,7 @@
-package appli;
+package fr.sedpower.touche_coule.appli;
 
-import controle.InitControle;
-import grille.*;
+import fr.sedpower.touche_coule.controle.InitControle;
+import fr.sedpower.touche_coule.grille.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,7 @@ public class InitPanel extends JPanel {
 
     public InitPanel(Fenetre fenetre) {
         this.setLayout(new BorderLayout());
-        ///////////////// Panel de la grille joueur /////////////////
+        ///////////////// Panel de la fr.sedpower.touche_coule.grille fr.sedpower.touche_coule.joueur /////////////////
         grillePanel = new JPanel(new GridLayout(10, 10));
         grillePanel.setPreferredSize(new Dimension(600,600));
         grille = new InitGrille();
@@ -32,7 +32,7 @@ public class InitPanel extends JPanel {
         }
         this.add(grillePanel, BorderLayout.CENTER);
 
-        ///////////////// Panel de l'orientation du bateau /////////////////
+        ///////////////// Panel de l'orientation du fr.sedpower.touche_coule.bateau /////////////////
         orientationPanel = new JPanel(new FlowLayout());
         horizontal = new JRadioButton("Horizontal", true);
         vertical = new JRadioButton("Vertical");

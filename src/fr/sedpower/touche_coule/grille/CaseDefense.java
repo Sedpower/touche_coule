@@ -1,4 +1,4 @@
-package grille;
+package fr.sedpower.touche_coule.grille;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -6,10 +6,10 @@ import java.awt.*;
 
 public class CaseDefense extends JLabel {
 
-    public static ImageIcon caseVideImg = resize(new ImageIcon("src/img/caseVideImg.png"));
-    public static ImageIcon caseVideTireeImg = resize(new ImageIcon("src/img/caseVideTireeDefenseImg.png"));
-    public static ImageIcon caseOccupeeImg = resize(new ImageIcon("src/img/caseOccupeeImg.png"));
-    public static ImageIcon caseOccupeeTireeImg = resize(new ImageIcon("src/img/caseOccupeeDefenseTireeImg.png"));
+    public static ImageIcon caseVideImg = resize(new ImageIcon("src/fr/sedpower/touche_coule/img/caseVideImg.png"));
+    public static ImageIcon caseVideTireeImg = resize(new ImageIcon("src/fr/sedpower/touche_coule/img/caseVideTireeDefenseImg.png"));
+    public static ImageIcon caseOccupeeImg = resize(new ImageIcon("src/fr/sedpower/touche_coule/img/caseOccupeeImg.png"));
+    public static ImageIcon caseOccupeeTireeImg = resize(new ImageIcon("src/fr/sedpower/touche_coule/img/caseOccupeeDefenseTireeImg.png"));
     private static ImageIcon resize(ImageIcon imageIcon) {
         Image image = imageIcon.getImage();
         Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);

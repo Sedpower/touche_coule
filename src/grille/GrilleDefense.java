@@ -9,7 +9,7 @@ public class GrilleDefense {
     }
 
     private void initGrilleToGrilleDefense(InitGrille initGrille) {
-        CaseCliquable[][] caseInitGrille = initGrille.getGrille();
+        InitCase[][] caseInitGrille = initGrille.getGrille();
         grilleDefense = new CaseDefense[10][10];
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {

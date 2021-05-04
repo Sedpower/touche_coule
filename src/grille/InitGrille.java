@@ -2,30 +2,28 @@ package grille;
 
 import bateau.Bateau;
 
-import java.awt.*;
-
 public class InitGrille {
 
-    private CaseCliquable[][] grille;
+    private InitCase[][] grille;
 
     public InitGrille(){
         grille = newGrille();
     }
-    private CaseCliquable[][] newGrille() {
-        grille = new CaseCliquable[10][10];
+    private InitCase[][] newGrille() {
+        grille = new InitCase[10][10];
         for (int ord = 0; ord < grille.length; ord++) {
             for (int abs = 0; abs < grille[ord].length; abs++){
-                grille[ord][abs] = new CaseCliquable(ord,abs);
+                grille[ord][abs] = new InitCase(ord,abs);
             }
         }
         return grille;
     }
 
-    public CaseCliquable getCase(int ord, int abs) {
+    public InitCase getCase(int ord, int abs) {
         return grille[ord][abs];
     }
 
-    public void ajoutBateau(Bateau bateau, CaseCliquable caseGrille) {
+    public void ajoutBateau(Bateau bateau, InitCase caseGrille) {
         int debut;
         int fin;
         if ( bateau.getOrientation().equals("Horizontal") ) {
@@ -46,7 +44,7 @@ public class InitGrille {
         }
     }
 
-    public boolean pasChevauche(Bateau bateau, CaseCliquable caseGrille) {
+    public boolean pasChevauche(Bateau bateau, InitCase caseGrille) {
         int debut;
         int fin;
         if ( bateau.getOrientation().equals("Horizontal") ) {
@@ -70,7 +68,7 @@ public class InitGrille {
         return true;
     }
 
-    public boolean isPossible(Bateau bateau, CaseCliquable caseGrille) {
+    public boolean isPossible(Bateau bateau, InitCase caseGrille) {
         if (bateau.getOrientation().equals("Horizontal")) {
             return bateau.getTaille() + caseGrille.getAbs() - 1 <= 9;
         } else {
@@ -78,7 +76,7 @@ public class InitGrille {
         }
     }
 
-    public void previewBateau(Bateau bateau, CaseCliquable caseGrille, boolean possible) {
+    public void previewBateau(Bateau bateau, InitCase caseGrille, boolean possible) {
         int debut;
         int fin;
         if ( bateau.getOrientation().equals("Horizontal") ) {
@@ -87,9 +85,9 @@ public class InitGrille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (possible) {
-                        getCase(caseGrille.getOrd(), i).setIcon(CaseCliquable.casePreviewPossibleImg);
+                        getCase(caseGrille.getOrd(), i).setIcon(InitCase.casePreviewPossibleImg);
                     } else {
-                        getCase(caseGrille.getOrd(), i).setIcon(CaseCliquable.casePreviewImpossibleImg);
+                        getCase(caseGrille.getOrd(), i).setIcon(InitCase.casePreviewImpossibleImg);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
@@ -101,9 +99,9 @@ public class InitGrille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (possible) {
-                        getCase(i, caseGrille.getAbs()).setIcon(CaseCliquable.casePreviewPossibleImg);
+                        getCase(i, caseGrille.getAbs()).setIcon(InitCase.casePreviewPossibleImg);
                     } else {
-                        getCase(i, caseGrille.getAbs()).setIcon(CaseCliquable.casePreviewImpossibleImg);
+                        getCase(i, caseGrille.getAbs()).setIcon(InitCase.casePreviewImpossibleImg);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
@@ -112,7 +110,7 @@ public class InitGrille {
         }
     }
 
-    public void removePreviewBateau(Bateau bateau, CaseCliquable caseGrille) {
+    public void removePreviewBateau(Bateau bateau, InitCase caseGrille) {
         int debut;
         int fin;
         if ( bateau.getOrientation().equals("Horizontal") ) {
@@ -121,9 +119,9 @@ public class InitGrille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (getCase(caseGrille.getOrd(), i).estOccupee()) {
-                        getCase(caseGrille.getOrd(), i).setIcon(CaseCliquable.caseOccupeeImg);
+                        getCase(caseGrille.getOrd(), i).setIcon(InitCase.caseOccupeeImg);
                     } else {
-                        getCase(caseGrille.getOrd(), i).setIcon(CaseCliquable.caseVideImg);
+                        getCase(caseGrille.getOrd(), i).setIcon(InitCase.caseVideImg);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
@@ -135,9 +133,9 @@ public class InitGrille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (getCase(i, caseGrille.getAbs()).estOccupee()) {
-                        getCase(i, caseGrille.getAbs()).setIcon(CaseCliquable.caseOccupeeImg);
+                        getCase(i, caseGrille.getAbs()).setIcon(InitCase.caseOccupeeImg);
                     } else {
-                        getCase(i, caseGrille.getAbs()).setIcon(CaseCliquable.caseVideImg);
+                        getCase(i, caseGrille.getAbs()).setIcon(InitCase.caseVideImg);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
@@ -146,7 +144,7 @@ public class InitGrille {
         }
     }
 
-    public CaseCliquable[][] getGrille() {
+    public InitCase[][] getGrille() {
         return this.grille;
     }
 }

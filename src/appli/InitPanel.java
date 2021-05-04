@@ -24,7 +24,7 @@ public class InitPanel extends JPanel {
         initControle = new InitControle(fenetre, grille, this);
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                CaseCliquable caseGrille = grille.getCase(i, j);
+                InitCase caseGrille = grille.getCase(i, j);
                 caseGrille.addActionListener(initControle);
                 caseGrille.addMouseListener(initControle);
                 grillePanel.add(caseGrille);
@@ -68,7 +68,7 @@ public class InitPanel extends JPanel {
         vertical.removeActionListener(initControle);
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                CaseCliquable caseGrille = grille.getCase(i, j);
+                InitCase caseGrille = grille.getCase(i, j);
                 caseGrille.removeMouseListener(initControle);
                 caseGrille.removeActionListener(initControle);
             }

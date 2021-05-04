@@ -7,9 +7,9 @@ import java.awt.*;
 public class CaseDefense extends JLabel {
 
     public static ImageIcon caseVideImg = resize(new ImageIcon("src/img/caseVideImg.png"));
-    public static ImageIcon caseVideTireeImg = resize(new ImageIcon("src/img/caseVideTireeImg.png"));
+    public static ImageIcon caseVideTireeImg = resize(new ImageIcon("src/img/caseVideTireeDefenseImg.png"));
     public static ImageIcon caseOccupeeImg = resize(new ImageIcon("src/img/caseOccupeeImg.png"));
-    public static ImageIcon caseOccupeeTireeImg = resize(new ImageIcon("src/img/caseOccupeeTireeImg.png"));
+    public static ImageIcon caseOccupeeTireeImg = resize(new ImageIcon("src/img/caseOccupeeDefenseTireeImg.png"));
     private static ImageIcon resize(ImageIcon imageIcon) {
         Image image = imageIcon.getImage();
         Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
@@ -20,7 +20,7 @@ public class CaseDefense extends JLabel {
     private boolean occupee;
     private final int abs,ord;
 
-    public CaseDefense(CaseCliquable caseGrille) {
+    public CaseDefense(InitCase caseGrille) {
         if (caseGrille.estOccupee()) {
             this.setIcon(caseOccupeeImg);
         } else {

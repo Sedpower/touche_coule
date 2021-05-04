@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
 
-public class CaseCliquable extends JButton {
+public class InitCase extends JButton {
 
     private static ImageIcon resize(ImageIcon imageIcon) {
         Image image = imageIcon.getImage();
@@ -18,7 +18,7 @@ public class CaseCliquable extends JButton {
     private boolean occupee;
     private final int abs, ord;
 
-    public CaseCliquable(int ord, int abs) {
+    public InitCase(int ord, int abs) {
         super("");
         this.ord = ord;
         this.abs = abs;

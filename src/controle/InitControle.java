@@ -44,8 +44,8 @@ public class InitControle implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Bateau bateau = bateaux.get(action);
-        if (e.getSource() instanceof CaseCliquable) {
-            CaseCliquable caseGrille = (CaseCliquable)e.getSource();
+        if (e.getSource() instanceof InitCase) {
+            InitCase caseGrille = (InitCase)e.getSource();
             if ( grille.isPossible(bateau, caseGrille) ) {
                 if ( grille.pasChevauche(bateau, caseGrille) ){
                     grille.ajoutBateau(bateau, caseGrille);
@@ -83,7 +83,7 @@ public class InitControle implements ActionListener, MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        CaseCliquable caseGrille = (CaseCliquable) e.getComponent();
+        InitCase caseGrille = (InitCase) e.getComponent();
         Bateau bateau = bateaux.get(action);
         if ( grille.isPossible(bateau, caseGrille) && grille.pasChevauche(bateau, caseGrille) ) {
             grille.previewBateau(bateau, caseGrille, true);
@@ -94,7 +94,7 @@ public class InitControle implements ActionListener, MouseListener {
 
     @Override
     public void mouseExited(MouseEvent e) {
-        CaseCliquable caseGrille = (CaseCliquable) e.getComponent();
+        InitCase caseGrille = (InitCase) e.getComponent();
         Bateau bateau = bateaux.get(action);
         grille.removePreviewBateau(bateau, caseGrille);
     }

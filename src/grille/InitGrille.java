@@ -4,28 +4,28 @@ import bateau.Bateau;
 
 import java.awt.*;
 
-public class Grille {
+public class InitGrille {
 
-    private Case[][] grille;
+    private CaseCliquable[][] grille;
 
-    public Grille(){
+    public InitGrille(){
         grille = newGrille();
     }
-    private Case[][] newGrille() {
-        grille = new Case[10][10];
+    private CaseCliquable[][] newGrille() {
+        grille = new CaseCliquable[10][10];
         for (int ord = 0; ord < grille.length; ord++) {
             for (int abs = 0; abs < grille[ord].length; abs++){
-                grille[ord][abs] = new Case(ord,abs);
+                grille[ord][abs] = new CaseCliquable(ord,abs);
             }
         }
         return grille;
     }
 
-    public Case getCase(int ord, int abs) {
+    public CaseCliquable getCase(int ord, int abs) {
         return grille[ord][abs];
     }
 
-    public void ajoutBateau(Bateau bateau, Case caseGrille) {
+    public void ajoutBateau(Bateau bateau, CaseCliquable caseGrille) {
         int debut;
         int fin;
         if ( bateau.getOrientation().equals("Horizontal") ) {
@@ -46,7 +46,7 @@ public class Grille {
         }
     }
 
-    public boolean pasChevauche(Bateau bateau, Case caseGrille) {
+    public boolean pasChevauche(Bateau bateau, CaseCliquable caseGrille) {
         int debut;
         int fin;
         if ( bateau.getOrientation().equals("Horizontal") ) {
@@ -70,7 +70,7 @@ public class Grille {
         return true;
     }
 
-    public boolean isPossible(Bateau bateau, Case caseGrille) {
+    public boolean isPossible(Bateau bateau, CaseCliquable caseGrille) {
         if (bateau.getOrientation().equals("Horizontal")) {
             return bateau.getTaille() + caseGrille.getAbs() - 1 <= 9;
         } else {
@@ -78,7 +78,7 @@ public class Grille {
         }
     }
 
-    public void previewBateau(Bateau bateau, Case caseGrille, boolean possible) {
+    public void previewBateau(Bateau bateau, CaseCliquable caseGrille, boolean possible) {
         int debut;
         int fin;
         if ( bateau.getOrientation().equals("Horizontal") ) {
@@ -112,7 +112,7 @@ public class Grille {
         }
     }
 
-    public void removePreviewBateau(Bateau bateau, Case caseGrille) {
+    public void removePreviewBateau(Bateau bateau, CaseCliquable caseGrille) {
         int debut;
         int fin;
         if ( bateau.getOrientation().equals("Horizontal") ) {
@@ -121,9 +121,9 @@ public class Grille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (getCase(caseGrille.getOrd(), i).estOccupee()) {
-                        getCase(caseGrille.getOrd(), i).setBackground(Case.caseOccupeeColor);
+                        getCase(caseGrille.getOrd(), i).setBackground(CaseCliquable.caseOccupeeColor);
                     } else {
-                        getCase(caseGrille.getOrd(), i).setBackground(Case.caseVideColor);
+                        getCase(caseGrille.getOrd(), i).setBackground(CaseCliquable.caseVideColor);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
@@ -135,9 +135,9 @@ public class Grille {
             try {
                 for (int i = debut; i < fin; i++) {
                     if (getCase(i, caseGrille.getAbs()).estOccupee()) {
-                        getCase(i, caseGrille.getAbs()).setBackground(Case.caseOccupeeColor);
+                        getCase(i, caseGrille.getAbs()).setBackground(CaseCliquable.caseOccupeeColor);
                     } else {
-                        getCase(i, caseGrille.getAbs()).setBackground(Case.caseVideColor);
+                        getCase(i, caseGrille.getAbs()).setBackground(CaseCliquable.caseVideColor);
                     }
                 }
             } catch (IndexOutOfBoundsException ignored) {
@@ -146,12 +146,7 @@ public class Grille {
         }
     }
 
-    public Case[][] getGrille() {
+    public CaseCliquable[][] getGrille() {
         return this.grille;
     }
 }
-
-
-
-
-

@@ -1,6 +1,6 @@
 package bateau;
 
-import grille.Case;
+import grille.CaseCliquable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ public class Bateau {
     private final int taille;
     private String orientation;
     private boolean coule;
-    private List<Case> casesBateau;
+    private List<CaseCliquable> casesBateau;
 
     public Bateau(int taille, String orientation) {
         this.taille = taille;
@@ -31,7 +31,7 @@ public class Bateau {
         return orientation;
     }
 
-    public void ajouterCase(Case caseGrille) {
+    public void ajouterCase(CaseCliquable caseGrille) {
         casesBateau.add(caseGrille);
     }
 

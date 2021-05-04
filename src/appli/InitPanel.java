@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class InitPanel extends JPanel {
 
-    private Grille grille;
+    private InitGrille grille;
     private JRadioButton vertical, horizontal;
     private JPanel grillePanel, orientationPanel, infoPanel;
     private JLabel info;
@@ -20,11 +20,11 @@ public class InitPanel extends JPanel {
         ///////////////// Panel de la grille joueur /////////////////
         grillePanel = new JPanel(new GridLayout(10, 10));
         grillePanel.setPreferredSize(new Dimension(600,600));
-        grille = new Grille();
+        grille = new InitGrille();
         initControle = new InitControle(fenetre, grille, this);
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                Case caseGrille = grille.getCase(i, j);
+                CaseCliquable caseGrille = grille.getCase(i, j);
                 caseGrille.addActionListener(initControle);
                 caseGrille.addMouseListener(initControle);
                 grillePanel.add(caseGrille);
@@ -68,7 +68,7 @@ public class InitPanel extends JPanel {
         vertical.removeActionListener(initControle);
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                Case caseGrille = grille.getCase(i, j);
+                CaseCliquable caseGrille = grille.getCase(i, j);
                 caseGrille.removeMouseListener(initControle);
                 caseGrille.removeActionListener(initControle);
             }

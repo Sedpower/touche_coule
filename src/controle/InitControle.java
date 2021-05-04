@@ -1,7 +1,7 @@
 package controle;
 
-import appli.InitPanel;
 import appli.Fenetre;
+import appli.InitPanel;
 import appli.JeuPanel;
 import bateau.Bateau;
 import grille.*;
@@ -13,13 +13,13 @@ import java.util.ArrayList;
 public class InitControle implements ActionListener, MouseListener {
 
     private Fenetre fenetre;
-    private Grille grille;
+    private InitGrille grille;
     private InitPanel initPanel;
     private static List<String> info = new ArrayList<>();
     private static List<Bateau> bateaux = new ArrayList<>();
     private static int action;
 
-    public InitControle(Fenetre fenetre, Grille grille, InitPanel initPanel) {
+    public InitControle(Fenetre fenetre, InitGrille grille, InitPanel initPanel) {
         this.initPanel = initPanel;
         this.fenetre = fenetre;
         this.grille = grille;
@@ -44,17 +44,16 @@ public class InitControle implements ActionListener, MouseListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Bateau bateau = bateaux.get(action);
-        if (e.getSource() instanceof Case) {
-            Case caseGrille = (Case)e.getSource();
+        if (e.getSource() instanceof CaseCliquable) {
+            CaseCliquable caseGrille = (CaseCliquable)e.getSource();
             if ( grille.isPossible(bateau, caseGrille) ) {
                 if ( grille.pasChevauche(bateau, caseGrille) ){
                     grille.ajoutBateau(bateau, caseGrille);
                     try {
                         initPanel.setInfo();
                     } catch (IndexOutOfBoundsException except) {
-                        System.out.println("test");
                         fenetre.removeInit();
-                        fenetre.setPanel(new JeuPanel(fenetre));
+                        fenetre.setPanel(new JeuPanel(fenetre, grille));
                     }
                 } else {
                     initPanel.setError("Le bateau en chevauche un autre");
@@ -84,7 +83,7 @@ public class InitControle implements ActionListener, MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        Case caseGrille = (Case) e.getComponent();
+        CaseCliquable caseGrille = (CaseCliquable) e.getComponent();
         Bateau bateau = bateaux.get(action);
         if ( grille.isPossible(bateau, caseGrille) && grille.pasChevauche(bateau, caseGrille) ) {
             grille.previewBateau(bateau, caseGrille, true);
@@ -95,7 +94,7 @@ public class InitControle implements ActionListener, MouseListener {
 
     @Override
     public void mouseExited(MouseEvent e) {
-        Case caseGrille = (Case) e.getComponent();
+        CaseCliquable caseGrille = (CaseCliquable) e.getComponent();
         Bateau bateau = bateaux.get(action);
         grille.removePreviewBateau(bateau, caseGrille);
     }

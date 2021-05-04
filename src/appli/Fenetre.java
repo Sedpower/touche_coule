@@ -29,6 +29,10 @@ public class Fenetre extends JFrame {
         cl.show(principal, "Panel de jeu");
     }
 
+    public void changeSize(Dimension dimension) {
+        this.setSize(dimension);
+    }
+
     public void removeInit() {
         initPanel.removeListener();
         this.remove(initPanel);

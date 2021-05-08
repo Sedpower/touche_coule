@@ -5,6 +5,7 @@ import fr.sedpower.touche_coule.controle.JeuControle;
 import fr.sedpower.touche_coule.grille.CaseDefense;
 import fr.sedpower.touche_coule.grille.GrilleDefense;
 import fr.sedpower.touche_coule.grille.InitGrille;
+import fr.sedpower.touche_coule.joueur.Joueur;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +18,7 @@ public class JeuPanel extends JPanel {
     private GrilleDefense grilleDefense;
     private JeuControle jeuControle;
 
-    public JeuPanel(Fenetre fenetre, InitGrille initGrille, List<Bateau> bateauxDefense) {
+    public JeuPanel(Fenetre fenetre, Joueur joueur) {
         this.setLayout(new BorderLayout());
         fenetre.changeSize(new Dimension(1100, 600));
         ///////////////// Panel des grilles fr.sedpower.touche_coule.joueur /////////////////
@@ -29,10 +30,10 @@ public class JeuPanel extends JPanel {
         advGrillePanel = new JPanel(new GridLayout(10, 10));
         advGrillePanel.setPreferredSize(new Dimension(500, 500));
 
-        grilleDefense = new GrilleDefense(initGrille);
+        grilleDefense = joueur.getGrille();
         // TODO Grille attaque
 
-        jeuControle = new JeuControle(fenetre, grilleDefense, bateauxDefense, this);
+        jeuControle = new JeuControle(fenetre, joueur, this);
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {

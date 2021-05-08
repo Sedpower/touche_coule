@@ -4,6 +4,7 @@ import fr.sedpower.touche_coule.appli.Fenetre;
 import fr.sedpower.touche_coule.appli.JeuPanel;
 import fr.sedpower.touche_coule.bateau.Bateau;
 import fr.sedpower.touche_coule.grille.GrilleDefense;
+import fr.sedpower.touche_coule.joueur.Joueur;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,13 +15,11 @@ import java.util.List;
 public class JeuControle implements ActionListener, MouseListener {
 
     private Fenetre fenetre;
-    private GrilleDefense grilleDefense;
     /*private GrilleAttaque grilleAttaque;*/
     private JeuPanel jeuPanel;
 
-    public JeuControle(Fenetre fenetre, GrilleDefense grilleDefense, List<Bateau> bateauxJoueur, /* GrilleAttaque grilleAttaque,*/ JeuPanel jeuPanel) {
+    public JeuControle(Fenetre fenetre, Joueur joueur, /* GrilleAttaque grilleAttaque,*/ JeuPanel jeuPanel) {
         this.fenetre = fenetre;
-        this.grilleDefense = grilleDefense;
         /*this.grilleAttaque = grilleAttaque;*/
         this.jeuPanel = jeuPanel;
     }

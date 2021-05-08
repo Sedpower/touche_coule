@@ -18,7 +18,7 @@ public class Fenetre extends JFrame {
         principal.setLayout(cl);
         initPanel = new InitPanel(this);
         principal.add(initPanel);
-        cl.show(principal, "Panel d'initiation de la fr.sedpower.touche_coule.grille de la partie");
+        cl.show(principal, "Panel d'initiation de la grille de la partie");
 
         this.add(principal);
         this.setVisible(true);

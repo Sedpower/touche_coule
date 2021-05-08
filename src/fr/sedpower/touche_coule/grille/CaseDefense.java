@@ -35,5 +35,10 @@ public class CaseDefense extends JLabel {
 
     public void setTiree() {
         tiree = true;
+        if (occupee) {
+            setIcon(caseOccupeeTireeImg);
+        } else {
+            setIcon(caseVideTireeImg);
+        }
     }
 }

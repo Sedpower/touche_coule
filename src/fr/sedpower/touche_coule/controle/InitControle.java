@@ -1,14 +1,14 @@
 package fr.sedpower.touche_coule.controle;
 
-import fr.sedpower.touche_coule.appli.Fenetre;
-import fr.sedpower.touche_coule.appli.InitPanel;
-import fr.sedpower.touche_coule.appli.JeuPanel;
-import fr.sedpower.touche_coule.bateau.Bateau;
+import fr.sedpower.touche_coule.appli.*;
+import fr.sedpower.touche_coule.bateau.*;
 import fr.sedpower.touche_coule.grille.*;
+import fr.sedpower.touche_coule.joueur.*;
 
 import java.awt.event.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class InitControle implements ActionListener, MouseListener {
 
@@ -53,17 +53,24 @@ public class InitControle implements ActionListener, MouseListener {
                         initPanel.setInfo();
                     } catch (IndexOutOfBoundsException except) {
                         fenetre.removeInit();
-                        fenetre.setPanel(new JeuPanel(fenetre, grille, bateaux));
+                        Joueur joueur = new Joueur(grille, bateaux);
+                        IA ia = new IA(random(), joueur.getGrille());
+                        fenetre.setPanel(new JeuPanel(fenetre, joueur));
                     }
                 } else {
-                    initPanel.setError("Le fr.sedpower.touche_coule.bateau en chevauche un autre");
+                    initPanel.setError("Le bateau en chevauche un autre");
                 }
             } else {
-                initPanel.setError("Le fr.sedpower.touche_coule.bateau sort de la fr.sedpower.touche_coule.grille de jeu");
+                initPanel.setError("Le bateau sort de la grille de jeu");
             }
         } else {
             bateaux.get(action).changeOrientation();
         }
+    }
+
+    private int random() {
+        Random random = new Random();
+        return random.nextInt(21);
     }
 
     @Override

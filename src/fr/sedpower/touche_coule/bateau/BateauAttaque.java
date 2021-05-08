@@ -1,20 +1,28 @@
 package fr.sedpower.touche_coule.bateau;
 
+import fr.sedpower.touche_coule.grille.CaseAttaque;
+import fr.sedpower.touche_coule.grille.CaseDefense;
 import fr.sedpower.touche_coule.grille.InitCase;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bateau {
+public class BateauAttaque {
 
     private final int taille;
     private String orientation;
-    private List<InitCase> casesBateau;
+    private boolean coule;
+    private List<CaseAttaque> casesBateau;
 
-    public Bateau(int taille, String orientation) {
+    public BateauAttaque(int taille, String orientation) {
         this.taille = taille;
         this.orientation = orientation;
+        this.coule = false;
         this.casesBateau = new ArrayList<>();
+    }
+
+    public boolean estCoule() {
+        return this.coule;
     }
 
     public int getTaille() {
@@ -25,19 +33,11 @@ public class Bateau {
         return orientation;
     }
 
-    public void ajouterCase(InitCase caseGrille) {
+    public void ajouterCase(CaseAttaque caseGrille) {
         casesBateau.add(caseGrille);
     }
 
-    public void changeOrientation() {
-        if (orientation.equals("Horizontal")) {
-            orientation = "Vertical";
-        } else {
-            orientation = "Horizontal";
-        }
-    }
-
-    public List<InitCase> getCases() {
+    public List<CaseAttaque> getCases() {
         return casesBateau;
     }
 }

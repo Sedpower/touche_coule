@@ -55,7 +55,7 @@ public class InitControle implements ActionListener, MouseListener {
                         fenetre.removeInit();
                         Joueur joueur = new Joueur(grille, bateaux);
                         IA ia = new IA(random(), joueur.getGrille());
-                        fenetre.setPanel(new JeuPanel(fenetre, joueur));
+                        fenetre.setPanel(new JeuPanel(fenetre, joueur, ia));
                     }
                 } else {
                     initPanel.setError("Le bateau en chevauche un autre");

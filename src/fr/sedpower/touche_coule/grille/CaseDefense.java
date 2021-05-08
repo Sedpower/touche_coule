@@ -6,15 +6,10 @@ import java.awt.*;
 
 public class CaseDefense extends JLabel {
 
-    public static ImageIcon caseVideImg = resize(new ImageIcon("src/ressources/img/caseVideImg.png"));
-    public static ImageIcon caseVideTireeImg = resize(new ImageIcon("src/ressources/img/caseVideTireeDefenseImg.png"));
-    public static ImageIcon caseOccupeeImg = resize(new ImageIcon("src/ressources/img/caseOccupeeImg.png"));
-    public static ImageIcon caseOccupeeTireeImg = resize(new ImageIcon("src/ressources/img/caseOccupeeDefenseTireeImg.png"));
-    private static ImageIcon resize(ImageIcon imageIcon) {
-        Image image = imageIcon.getImage();
-        Image newimg = image.getScaledInstance(50, 50,  java.awt.Image.SCALE_SMOOTH);
-        return new ImageIcon(newimg);
-    }
+    public static ImageIcon caseVideImg = new ImageIcon("src/ressources/img/caseVideImg.png");
+    public static ImageIcon caseVideTireeImg = new ImageIcon("src/ressources/img/caseVideTireeDefenseImg.png");
+    public static ImageIcon caseOccupeeImg = new ImageIcon("src/ressources/img/caseOccupeeImg.png");
+    public static ImageIcon caseOccupeeTireeImg = new ImageIcon("src/ressources/img/caseOccupeeTireeDefenseImg.png");
 
     private boolean tiree;
     private boolean occupee;

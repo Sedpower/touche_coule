@@ -6,17 +6,12 @@ import java.awt.*;
 
 public class CaseAttaque extends JButton {
 
-    private static ImageIcon resize(ImageIcon imageIcon) {
-        Image image = imageIcon.getImage();
-        Image newimg = image.getScaledInstance(90, 90,  java.awt.Image.SCALE_SMOOTH);
-        return new ImageIcon(newimg);
-    }
-    public static ImageIcon caseVideImg = resize(new ImageIcon("src/ressources/img/caseVideImg.png"));
-    public static ImageIcon caseVideHoverImg = resize(new ImageIcon("src/ressources/img/caseVideHoverImg.png"));
-    public static ImageIcon caseVideTireeImg = resize(new ImageIcon("src/ressources/img/caseVideTireeAttaqueImg.png"));
-    public static ImageIcon caseVideTireeHoverImg = resize(new ImageIcon("src/ressources/img/caseVideTireeAttaqueHoverImg.png"));
-    public static ImageIcon caseOccupeeTireeImg = resize(new ImageIcon("src/ressources/img/caseOccupeeTireeAttaqueImg.png"));
-    public static ImageIcon caseOccupeeTireeHoverImg = resize(new ImageIcon("src/ressources/img/caseOccupeeTireeAttaqueHoverImg.png"));
+    public static ImageIcon caseVideImg = new ImageIcon("src/ressources/img/caseVideImg.png");
+    public static ImageIcon caseVideHoverImg = new ImageIcon("src/ressources/img/caseVideHoverImg.png");
+    public static ImageIcon caseVideTireeImg = new ImageIcon("src/ressources/img/caseVideTireeAttaqueImg.png");
+    public static ImageIcon caseVideTireeHoverImg = new ImageIcon("src/ressources/img/caseVideTireeAttaqueHoverImg.png");
+    public static ImageIcon caseOccupeeTireeImg = new ImageIcon("src/ressources/img/caseOccupeeTireeAttaqueImg.png");
+    public static ImageIcon caseOccupeeTireeHoverImg = new ImageIcon("src/ressources/img/caseOccupeeTireeAttaqueHoverImg.png");
 
     int ord, abs;
     boolean occupee, tiree;
@@ -36,7 +31,6 @@ public class CaseAttaque extends JButton {
 
     public void setOccupee() {
         occupee = true;
-        setIcon(caseOccupeeTireeImg);
     }
 
     public boolean estTiree() {

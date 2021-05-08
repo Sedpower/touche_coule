@@ -198,6 +198,10 @@ public class IA {
         bateaux.add(bateau);
     }
 
+    public GrilleAttaque getGrille() {
+        return grille;
+    }
+
     public void jouer() {
         Random random = new Random();
         int index = random.nextInt(grilleJoueur.size());

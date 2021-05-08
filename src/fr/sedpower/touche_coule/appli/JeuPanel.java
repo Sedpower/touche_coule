@@ -2,9 +2,7 @@ package fr.sedpower.touche_coule.appli;
 
 import fr.sedpower.touche_coule.bateau.Bateau;
 import fr.sedpower.touche_coule.controle.JeuControle;
-import fr.sedpower.touche_coule.grille.CaseDefense;
-import fr.sedpower.touche_coule.grille.GrilleDefense;
-import fr.sedpower.touche_coule.grille.InitGrille;
+import fr.sedpower.touche_coule.grille.*;
 import fr.sedpower.touche_coule.joueur.IA;
 import fr.sedpower.touche_coule.joueur.Joueur;
 
@@ -17,12 +15,13 @@ public class JeuPanel extends JPanel {
     private JPanel maGrillePanel, advGrillePanel, grillesPanel, infoPanel;
     private JLabel info;
     private GrilleDefense grilleDefense;
+    private GrilleAttaque grilleAttaque;
     private JeuControle jeuControle;
 
     public JeuPanel(Fenetre fenetre, Joueur joueur, IA ia) {
         this.setLayout(new BorderLayout());
         fenetre.changeSize(new Dimension(1100, 600));
-        ///////////////// Panel des grilles fr.sedpower.touche_coule.joueur /////////////////
+        ///////////////// Panel des grilles joueur /////////////////
         grillesPanel = new JPanel(new FlowLayout());
 
         maGrillePanel = new JPanel(new GridLayout(10, 10));
@@ -32,22 +31,21 @@ public class JeuPanel extends JPanel {
         advGrillePanel.setPreferredSize(new Dimension(500, 500));
 
         grilleDefense = joueur.getGrille();
-        // TODO Grille attaque
+        grilleAttaque = ia.getGrille();
 
-        jeuControle = new JeuControle(fenetre, joueur, this);
+        jeuControle = new JeuControle(fenetre, joueur, ia, this);
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 CaseDefense caseGrilleDefense = grilleDefense.getCase(i, j);
                 maGrillePanel.add(caseGrilleDefense);
-                //caseGrilleDefense.addActionListener(jeuControle);*/
-                //caseGrilleDefense.addMouseListener(jeuControle);
-                // TODO Grille attaque
+                CaseAttaque caseGrilleAttaque = grilleAttaque.getCase(i, j);
+                caseGrilleAttaque.addActionListener(jeuControle);
+                caseGrilleAttaque.addMouseListener(jeuControle);
+                advGrillePanel.add(caseGrilleAttaque);
             }
         }
-        for(int i = 0; i<100;i++) {
-            advGrillePanel.add(new JButton("test"));
-        }
+
         //advGrillePanel.setBorder(new EmptyBorder(0, 20, 0, 0));
         //maGrillePanel.setBorder(new EmptyBorder(0, 0, 0, 20));
         grillesPanel.add(maGrillePanel);

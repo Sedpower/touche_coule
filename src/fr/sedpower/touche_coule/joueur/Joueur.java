@@ -1,6 +1,7 @@
 package fr.sedpower.touche_coule.joueur;
 
 import fr.sedpower.touche_coule.bateau.Bateau;
+import fr.sedpower.touche_coule.bateau.BateauAttaque;
 import fr.sedpower.touche_coule.bateau.BateauDefense;
 import fr.sedpower.touche_coule.grille.GrilleDefense;
 import fr.sedpower.touche_coule.grille.InitGrille;
@@ -17,7 +18,7 @@ public class Joueur {
         grille = new GrilleDefense(initGrille);
         this.bateaux = new ArrayList<>();
         for (Bateau bateau : bateaux) {
-            this.bateaux.add(new BateauDefense(bateau));
+            this.bateaux.add(new BateauDefense(bateau, grille));
         }
     }
 
@@ -25,4 +26,21 @@ public class Joueur {
         return grille;
     }
 
+    public BateauDefense getBateau(int ord, int abs) {
+        for (BateauDefense bateau : bateaux) {
+            if (bateau.estEn(ord, abs)) {
+                return bateau;
+            }
+        }
+        return null;
+    }
+
+    public boolean perdu() {
+        for (BateauDefense bateau : bateaux) {
+            if (!bateau.estCoule()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

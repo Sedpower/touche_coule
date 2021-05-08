@@ -31,7 +31,7 @@ public class InitGrille {
             fin = caseGrille.getAbs() + bateau.getTaille();
             for (int i = debut; i < fin; i++) {
                 getCase(caseGrille.getOrd(),i).setOccupee();
-                bateau.ajouterCase(caseGrille);
+                bateau.ajouterCase(getCase(caseGrille.getOrd(),i));
 
             }
         } else {
@@ -39,7 +39,7 @@ public class InitGrille {
             fin = caseGrille.getOrd() + bateau.getTaille();
             for (int i = debut; i < fin; i++) {
                 getCase(i, caseGrille.getAbs()).setOccupee();
-                bateau.ajouterCase(caseGrille);
+                bateau.ajouterCase(getCase(i, caseGrille.getAbs()));
             }
         }
     }

@@ -11,18 +11,21 @@ public class BateauAttaque {
 
     private final int taille;
     private String orientation;
-    private boolean coule;
     private List<CaseAttaque> casesBateau;
 
     public BateauAttaque(int taille, String orientation) {
         this.taille = taille;
         this.orientation = orientation;
-        this.coule = false;
         this.casesBateau = new ArrayList<>();
     }
 
     public boolean estCoule() {
-        return this.coule;
+        for (CaseAttaque caseBt : casesBateau) {
+            if (!caseBt.estTiree()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public int getTaille() {
@@ -39,5 +42,14 @@ public class BateauAttaque {
 
     public List<CaseAttaque> getCases() {
         return casesBateau;
+    }
+
+    public boolean estEn(int ord, int abs) {
+        for (CaseAttaque caseGrille : casesBateau) {
+            if (caseGrille.getAbs() == abs && caseGrille.getOrd() == ord) {
+                return true;
+            }
+        }
+        return false;
     }
 }

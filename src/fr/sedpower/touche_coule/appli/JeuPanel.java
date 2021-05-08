@@ -12,8 +12,8 @@ import java.util.List;
 
 public class JeuPanel extends JPanel {
 
-    private JPanel maGrillePanel, advGrillePanel, grillesPanel, infoPanel;
-    private JLabel info;
+    private JPanel maGrillePanel, advGrillePanel, grillesPanel, infoPanel, infoActionJoueurPanel, infoActionIAPanel;
+    private JLabel infoActionJoueur, infoActionIA;
     private GrilleDefense grilleDefense;
     private GrilleAttaque grilleAttaque;
     private JeuControle jeuControle;
@@ -45,18 +45,28 @@ public class JeuPanel extends JPanel {
                 advGrillePanel.add(caseGrilleAttaque);
             }
         }
-
-        //advGrillePanel.setBorder(new EmptyBorder(0, 20, 0, 0));
-        //maGrillePanel.setBorder(new EmptyBorder(0, 0, 0, 20));
         grillesPanel.add(maGrillePanel);
         grillesPanel.add(advGrillePanel);
         this.add(grillesPanel, BorderLayout.CENTER);
 
-        infoPanel = new JPanel(new GridBagLayout());
+        infoPanel = new JPanel(new GridLayout(1, 2));
         infoPanel.setPreferredSize(new Dimension(0, 50));
-        info = new JLabel("");
-        infoPanel.add(info, new GridBagConstraints());
+        infoActionJoueurPanel = new JPanel(new FlowLayout());
+        infoActionIAPanel = new JPanel(new FlowLayout());
+        infoActionJoueur = new JLabel("");
+        infoActionIA = new JLabel("");
+        infoActionIAPanel.add(infoActionIA);
+        infoActionJoueurPanel.add(infoActionJoueur);
+        infoPanel.add(infoActionIAPanel);
+        infoPanel.add(infoActionJoueurPanel);
         this.add(infoPanel, BorderLayout.SOUTH);
+    }
 
+    public void setInfoActionJoueur(String info) {
+        infoActionJoueur.setText(info);
+    }
+
+    public void setInfoActionIA(String info) {
+        infoActionIA.setText(info);
     }
 }

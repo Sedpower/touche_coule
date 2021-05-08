@@ -36,4 +36,20 @@ public class CaseDefense extends JLabel {
             setIcon(caseVideTireeImg);
         }
     }
+
+    public boolean estOccupee() {
+        return occupee;
+    }
+
+    public boolean estTiree() {
+        return tiree;
+    }
+
+    public int getAbs() {
+        return abs;
+    }
+
+    public int getOrd() {
+        return ord;
+    }
 }

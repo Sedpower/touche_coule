@@ -202,10 +202,30 @@ public class IA {
         return grille;
     }
 
-    public void jouer() {
+    public CaseDefense jouer() {
         Random random = new Random();
         int index = random.nextInt(grilleJoueur.size());
-        grilleJoueur.get(index).setTiree();
+        CaseDefense caseJouee = grilleJoueur.get(index);
+        caseJouee.setTiree();
         grilleJoueur.remove(index);
+        return caseJouee;
+    }
+
+    public BateauAttaque getBateau(int ord, int abs) {
+        for (BateauAttaque bateau : bateaux) {
+            if (bateau.estEn(ord, abs)) {
+                return bateau;
+            }
+        }
+        return null;
+    }
+
+    public boolean perdu() {
+        for (BateauAttaque bateau : bateaux) {
+            if (!bateau.estCoule()) {
+               return false;
+            }
+        }
+        return true;
     }
 }
